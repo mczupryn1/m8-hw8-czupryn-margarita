@@ -39,13 +39,45 @@ header {
 header a {
   font-size: 1.5rem;
   color: var(--off-white);
+  animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
 }
 /* end header link animations */
 
 /* article link transitions */
 main a {
   color: var(--danger-color);
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
+
+main a:hover{
+  color: #042d2f;
+  background-color: #06b3bc;
+}
+
 /* end article link transitions */
 
 main > article, nav{
@@ -100,6 +132,29 @@ section.hero > button {
   border-radius: 12px;
   text-transform: uppercase;
   cursor: pointer;
+  animation: backflip 4s linear;
+  animation-duration: 12s;
+}
+
+@keyframes hover {
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes backflip {
+  8% {
+    transform: translateY(8px) rotateZ(0deg)
+  }
+  25% {
+    transform: translateY(-50px) rotateZ(-180deg)
+  }
+  50% {
+    transform: translateY(0px) rotateZ(-360deg)
+  }
+  100% {
+    transform: translate Y(0px) rotateZ(-360deg)
+  }
 }
 
 main article {
